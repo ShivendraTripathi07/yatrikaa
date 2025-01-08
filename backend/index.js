@@ -11,7 +11,7 @@ app.use(express.json());
 app.use(bodyParser.json({ extended: true }));
 app.use(
   cors({
-    origin: "https://localhost:5173",
+    origin: "http://localhost:5173",
     Credentials: true,
   })
 );
