@@ -9,5 +9,13 @@ const Api = {
     url: `${domain}/user/login`,
     method: "post",
   },
+  current_user: {
+    url: `${domain}/user/user-detail`,
+    method: "get",
+  },
+  logout_user: {
+    url: `${domain}/user/logout-user`,
+    method: "post",
+  },
 };
 export default Api;

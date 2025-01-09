@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { Link, useNavigate } from "react-router-dom";
 import Api from "../common";
 import { toast } from "react-toastify";
+import Context from "../context";
 
 const Login = () => {
   const [isRightPanelActive, setIsRightPanelActive] = useState(false);
@@ -12,6 +13,7 @@ const Login = () => {
     password: "",
   });
   const navigate = useNavigate();
+  const { fetchUserDetail } = useContext(Context);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -27,22 +29,25 @@ const Login = () => {
     e.preventDefault();
     const dataResponse = await fetch(Api.login.url, {
       method: Api.login.method,
+      credentials: "include",
       headers: {
         "content-type": "application/json",
       },
       body: JSON.stringify(data),
     });
-    console.log(dataResponse);
+    // console.log(dataResponse);
     const dataApi = await dataResponse.json();
     // console.log(dataApi);
     if (dataApi.success) {
       // console.log(dataApi);
       toast.success("Login Successful");
       navigate("/");
+      fetchUserDetail();
     } else {
       toast.error("Login Unsuccessful");
     }
   };
+  // useEffect()
 
   return (
     <div className="min-h-screen bg-[#f6f5f7] flex justify-center items-center py-12 px-4">
