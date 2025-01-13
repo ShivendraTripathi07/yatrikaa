@@ -29,6 +29,14 @@ const Api = {
     url: `${domain}/destination/getOneDestination`,
     method: "get",
   },
+  searchDestination: {
+    url: `${domain}/destination/searchDestination`,
+    method: "get",
+  },
+  filterDestinations: {
+    url: `${domain}/destination/filterDestinations`,
+    method: "get",
+  },
   postReview: {
     url: `${domain}/reviews/postReview`,
     method: "post",

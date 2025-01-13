@@ -9,7 +9,7 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 
-const DestinationCard = ({ destination, onClick }) => {
+const DestinationCard = ({ destination }) => {
   const [isLiked, setIsLiked] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
@@ -45,7 +45,7 @@ const DestinationCard = ({ destination, onClick }) => {
     <Link to={`/destinations/${_id}`} className="block">
       <div
         className="bg-white rounded-xl shadow-md overflow-hidden transition-transform duration-300 hover:shadow-lg hover:-translate-y-1"
-        onClick={onClick}
+        // onClick={onClick}
       >
         {/* Image Container */}
         <div className="relative h-48 overflow-hidden">
