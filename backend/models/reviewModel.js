@@ -27,12 +27,7 @@ const reviewSchema = new mongoose.Schema({
       caption: String,
     },
   ],
-  likes: [
-    {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "User",
-    },
-  ],
+
   createdAt: {
     type: Date,
     default: Date.now,

@@ -61,7 +61,7 @@ const Header = () => {
   const navItems = [
     { name: "Property", icon: Home, path: "/property" },
     { name: "MyTrips", icon: MapPin, path: "/my-trips" },
-    { name: "Saved", icon: Heart, path: "/saved" },
+    { name: "destinations", icon: Heart, path: "/destinations" },
   ];
 
   const userMenuItems = [

@@ -4,6 +4,8 @@ const cors = require("cors");
 require("dotenv").config();
 const bodyParser = require("body-parser");
 const userRoutes = require("./routes/userRoutes");
+const destinationRoutes = require("./routes/destinationroutes");
+const reviewRoutes = require("./routes/reviewRoutes");
 const cookieParser = require("cookie-parser");
 
 const app = express();
@@ -22,6 +24,8 @@ app.use(
 // routes
 
 app.use("/user", userRoutes);
+app.use("/destination", destinationRoutes);
+app.use("/reviews", reviewRoutes);
 
 const PORT = 8000;
 

@@ -17,5 +17,21 @@ const Api = {
     url: `${domain}/user/logout-user`,
     method: "post",
   },
+  postDestination: {
+    url: `${domain}/destination/postDestination`,
+    method: "post",
+  },
+  getAllDestinations: {
+    url: `${domain}/destination/getAllDestinations`,
+    method: "get",
+  },
+  getOneDestination: {
+    url: `${domain}/destination/getOneDestination`,
+    method: "get",
+  },
+  postReview: {
+    url: `${domain}/reviews/postReview`,
+    method: "post",
+  },
 };
 export default Api;

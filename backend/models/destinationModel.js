@@ -23,8 +23,15 @@ const destinationSchema = new mongoose.Schema({
     },
   ],
   coordinates: {
-    latitude: Number,
-    longitude: Number,
+    type: {
+      type: String,
+      enum: ["Point"],
+      required: true,
+    },
+    coordinates: {
+      type: [Number], // [longitude, latitude]
+      required: true,
+    },
   },
   bestTimeToVisit: [String],
   averageCost: {
@@ -50,6 +57,9 @@ const destinationSchema = new mongoose.Schema({
     },
   ],
 });
+
+// Create a 2dsphere index for geospatial queries
+destinationSchema.index({ coordinates: "2dsphere" });
 
 const Destination = mongoose.model("Destination", destinationSchema);
 module.exports = Destination;

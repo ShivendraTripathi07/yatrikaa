@@ -25,9 +25,10 @@ const Home = () => {
         title="Religious Destinations"
         subtitle="Sacred places of spiritual significance"
       />
+      <Guides />
       <Boxes />
       <Reviews />
-      <Guides />
+      
     </div>
   );
 };
