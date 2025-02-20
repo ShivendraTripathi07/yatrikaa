@@ -17,12 +17,14 @@ const DestinationCard = ({ destination }) => {
     _id,
     name,
     region,
+    country,
     description,
     images,
     bestTimeToVisit,
     averageCost,
     categories,
     rating,
+    highlights,
   } = destination;
 
   const truncateText = (text, maxLength) => {
@@ -109,7 +111,9 @@ const DestinationCard = ({ destination }) => {
             <h3 className="text-lg font-semibold text-gray-900">{name}</h3>
             <div className="flex items-center gap-1 text-gray-600 text-sm mt-1">
               <MapPin className="w-4 h-4" />
-              <span>{region}</span>
+              <span>
+                {region}, {country}
+              </span>
             </div>
           </div>
 
@@ -129,12 +133,28 @@ const DestinationCard = ({ destination }) => {
           <p className="text-gray-600 text-sm mb-4">
             {truncateText(description, 100)}
           </p>
+          <div className="flex flex-col flex-wrap gap-1 mb-3">
+            <p className="px-1 font-semibold text-slate-800">Highlights</p>
+            <div>
+              {highlights.slice(0, 3).map((highlight, index) => (
+                <span
+                  key={index}
+                  className="px-1 py-1 bg-blue-50 text-blue-600 rounded-full text-xs font-medium"
+                >
+                  {highlight}
+                </span>
+              ))}
+            </div>
+          </div>
 
           {/* Footer Info */}
           <div className="flex items-center justify-between text-sm pt-3 border-t border-gray-100">
             <div className="flex items-center gap-1 text-gray-600">
               <Calendar className="w-4 h-4" />
-              <span>{bestTimeToVisit[0]}</span>
+              <span>
+                {bestTimeToVisit[0]} -{" "}
+                {bestTimeToVisit[bestTimeToVisit.length - 1]}
+              </span>
             </div>
             <div className="flex items-center gap-1 text-gray-900 font-medium">
               <IndianRupee className="w-4 h-4" />

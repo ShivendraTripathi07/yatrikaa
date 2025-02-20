@@ -25,6 +25,7 @@ const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeItem, setActiveItem] = useState(null);
   const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
+  const [dMenu, setDMenu] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const user = useSelector((state) => state?.user?.user);
@@ -66,7 +67,7 @@ const Header = () => {
 
   const userMenuItems = [
     { name: "Profile", icon: User, path: "/profile" },
-    { name: "Destinations", icon: Map, path: "/destinations" },
+    { name: "Post Destination", icon: Map, path: "/postDestination" },
     { name: "Travel", icon: Navigation, path: "/travel" },
     { name: "Logout", icon: LogOut, onClick: handleLogout },
   ];

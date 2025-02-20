@@ -41,5 +41,13 @@ const Api = {
     url: `${domain}/reviews/postReview`,
     method: "post",
   },
+  getAllReviews: {
+    url: `${domain}/reviews/getAllReviews`,
+    method: "get",
+  },
+  getReview: {
+    url: `${domain}/reviews/getReview`,
+    method: "get",
+  },
 };
 export default Api;

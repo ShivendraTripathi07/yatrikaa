@@ -3,6 +3,7 @@ const User = require("./../../models/userModel");
 async function userDetail(req, res) {
   try {
     const user = await User.findById(req.userId);
+    // console.log(user);
     res.status(200).json({
       message: "User detail",
       data: user,

@@ -7,6 +7,10 @@ import Login from "../pages/login";
 import SignUp from "../pages/SignUp";
 import Destinations from "../pages/Destinations";
 import ParticularDestination from "../pages/ParticularDestination";
+import PostDestination from "../pages/PostDestination";
+import Profile from "../pages/Profile";
+import AllUsers from "../components/AllUsers";
+import MyProfile from "../components/MyProfile";
 
 const router = createBrowserRouter([
   {
@@ -32,6 +36,24 @@ const router = createBrowserRouter([
       {
         path: "destinations/:destinationId",
         element: <ParticularDestination />,
+      },
+      {
+        path: "postDestination",
+        element: <PostDestination />,
+      },
+      {
+        path: "profile",
+        element: <Profile />,
+        children: [
+          {
+            path: "allusers",
+            element: <AllUsers />,
+          },
+          {
+            path: "myprofile",
+            element: <MyProfile />,
+          },
+        ],
       },
     ],
   },
